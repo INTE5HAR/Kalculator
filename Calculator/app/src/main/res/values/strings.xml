@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="default_display_text">0</string>
+
+    <string name="btn_clear">AC</string>
+    <string name="btn_parentheses">( )</string>
+    <string name="btn_percent">%</string>
+    <string name="btn_divide">÷</string>
+    <string name="btn_7">7</string>
+    <string name="btn_8">8</string>
+    <string name="btn_9">9</string>
+    <string name="btn_multiply">×</string>
+    <string name="btn_4">4</string>
+    <string name="btn_5">5</string>
+    <string name="btn_6">6</string>
+    <string name="btn_subtract">−</string>
+    <string name="btn_1">1</string>
+    <string name="btn_2">2</string>
+    <string name="btn_3">3</string>
+    <string name="btn_add">+</string>
+    <string name="btn_0">0</string>
+    <string name="btn_dot">.</string>
+    <string name="btn_backspace">⌫</string>
+    <string name="btn_equals">=</string>
+
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="desc_clear">Clear</string>
+    <string name="desc_parentheses">Parentheses</string>
+    <string name="desc_percent">Percent</string>
+    <string name="desc_divide">Divide</string>
+    <string name="desc_multiply">Multiply</string>
+    <string name="desc_subtract">Subtract</string>
+    <string name="desc_add">Add</string>
+    <string name="desc_equals">Equals</string>
+    <string name="desc_decimal">Decimal point</string>
+    <string name="desc_backspace">Backspace</string>
+
+    <string name="desc_0">0</string>
+    <string name="desc_1">1</string>
+    <string name="desc_2">2</string>
+    <string name="desc_3">3</string>
+    <string name="desc_4">4</string>
+    <string name="desc_5">5</string>
+    <string name="desc_6">6</string>
+    <string name="desc_7">7</string>
+    <string name="desc_8">8</string>
+    <string name="desc_9">9</string>
+</resources>

@@ -1,14 +1,26 @@
-# Android build & cache files inside App files subfolder
-/App files/.gradle/
-/App files/build/
-/App files/app/build/
-/App files/.idea/
-/App files/*.iml
-/App files/local.properties
-/App files/captures/
-/App files/.externalNativeBuild/
-/App files/.cxx/
+# Gradle
+.gradle/
+build/
 
-# Operating System files
+# Android Studio / IntelliJ
+.idea/
+*.iml
+.kotlin/
+captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+
+# Signing keys and secrets
+*.jks
+*.keystore
+keystore.properties
+
+# Build outputs (publish APKs under GitHub Releases instead)
+*.apk
+*.aab
+
+# OS files
 .DS_Store
 Thumbs.db
+desktop.ini
