@@ -1,17 +1,14 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+# Android build & cache files inside App files subfolder
+/App files/.gradle/
+/App files/build/
+/App files/app/build/
+/App files/.idea/
+/App files/*.iml
+/App files/local.properties
+/App files/captures/
+/App files/.externalNativeBuild/
+/App files/.cxx/
+
+# Operating System files
 .DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
-.idea
-app/build
+Thumbs.db
