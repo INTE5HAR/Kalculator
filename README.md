@@ -1,8 +1,8 @@
 # Kalculator - Android Kotlin Arithmetic Calculator
 
 ![Language](https://img.shields.io/badge/Language-Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
-![Platform](https://img.shields.io/badge/Platform-Android%209.0%2B%20(API%2028%2B)-3DDC84?style=for-the-badge&logo=android&logoColor=white)
-![IDE](https://img.shields.io/badge/IDE-Android%20Studio-3DDC84?style=for-the-badge&logo=androidstudio&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Android%209.0%2B%20(API%2028%2B)-2E7D32?style=for-the-badge&logo=android&logoColor=white)
+![IDE](https://img.shields.io/badge/IDE-Android%20Studio-2E7D32?style=for-the-badge&logo=androidstudio&logoColor=white)
 ![Build Tool](https://img.shields.io/badge/Build-Gradle%209.6.0%20%2F%20AGP%209.5.1-02303A?style=for-the-badge&logo=gradle&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 
@@ -10,11 +10,18 @@ A modern, sleek, and intuitive arithmetic calculator application built for Andro
 
 ---
 
-<p align="center">
-  <img src="pngfiles/app%20icon.png" alt="Kalculator Icon" width="120" style="border-radius: 24px;" />
-  <br/>
-  <img src="pngfiles/app%20interface.png" alt="Kalculator Interface" width="320" style="border-radius: 16px; margin-top: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
-</p>
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="pngfiles/app%20icon.png" alt="App icon" width="120" style="border-radius: 24px;" />
+      <br/><sub><b>App icon</b></sub>
+    </td>
+    <td align="center">
+      <img src="pngfiles/app%20interface.png" alt="App interface" width="320" style="border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
+      <br/><sub><b>App interface</b></sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -107,7 +114,6 @@ Kalculator/
 ├── pngfiles/                                 # Media assets for documentation
 │   ├── app icon.png                          # High-resolution launcher icon
 │   └── app interface.png                     # Application interface screenshot
-├── app-debug.apk                             # Pre-built debug APK for direct installation
 ├── LICENSE                                   # MIT License
 ├── .gitignore                                # Root version control ignore rules
 └── README.md                                 # Project documentation
@@ -140,39 +146,39 @@ The core calculation logic is isolated in [`CalculatorEngine.kt`](Calculator/app
 
 ```mermaid
 flowchart TD
-    A([User Input Event]) --> B{Input Type}
+    A(["User Input Event"]) --> B{"Input Type"}
 
-    B -->|Digit '0'–'9'| C[Append digit to token buffer]
-    B -->|Operator '+', '−', '×', '÷'| D{Previous character is operator?}
-    B -->|Decimal '.'| E{Current token contains '.'?}
-    B -->|Parentheses '( )'| F[Balance matching open/close bracket]
-    B -->|Equals '='| G[Commit final evaluated result]
-    B -->|Swipe / Backspace '⌫'| H[Delete last character]
-    B -->|Clear 'C' / 'AC'| I[Reset expression and live preview]
+    B -->|"Digit '0'–'9'"| C["Append digit to token buffer"]
+    B -->|"Operator '+', '−', '×', '÷'"| D{"Previous character is operator?"}
+    B -->|"Decimal '.'"| E{"Current token contains '.'?"}
+    B -->|"Parentheses ( )"| F["Balance matching open/close bracket"]
+    B -->|"Equals '='"| G["Commit final evaluated result"]
+    B -->|"Swipe / Backspace ⌫"| H["Delete last character"]
+    B -->|"Clear 'C' / 'AC'"| I["Reset expression and live preview"]
 
-    D -->|Yes| D1[Replace previous operator]
-    D -->|No| D2[Append operator to expression]
+    D -->|"Yes"| D1["Replace previous operator"]
+    D -->|"No"| D2["Append operator to expression"]
 
-    E -->|No| E1[Append '.' to token]
-    E -->|Yes| E2[Ignore input]
+    E -->|"No"| E1["Append '.' to token"]
+    E -->|"Yes"| E2["Ignore input"]
 
-    C --> J[Run Live Parser]
+    C --> J["Run Live Parser"]
     D1 --> J
     D2 --> J
     E1 --> J
     F --> J
     H --> J
 
-    J --> K[Tokenize Expression]
-    K --> L[Convert to RPN via Shunting-Yard Algorithm]
-    L --> M[Evaluate RPN with BigDecimal Stack]
+    J --> K["Tokenize Expression"]
+    K --> L["Convert to RPN via Shunting-Yard Algorithm"]
+    L --> M["Evaluate RPN with BigDecimal Stack"]
 
-    M -->|Valid Result| N[Format number & update live preview]
-    M -->|Divide by Zero| O[Set error: 'Cannot divide by zero']
-    M -->|Incomplete Expression| P[Retain previous display value]
+    M -->|"Valid Result"| N["Format number & update live preview"]
+    M -->|"Divide by Zero"| O["Set error: 'Cannot divide by zero'"]
+    M -->|"Incomplete Expression"| P["Retain previous display value"]
 
-    G --> Q[Promote live result to main expression]
-    N --> R([Update UI Display & Haptic Feedback])
+    G --> Q["Promote live result to main expression"]
+    N --> R(["Update UI Display & Haptic Feedback"])
     O --> R
     P --> R
     Q --> R
@@ -245,12 +251,12 @@ Calculator/app/build/reports/tests/testDebugUnitTest/index.html
 
 ## Direct APK Download
 
-For quick installation without building from source, a pre-compiled debug APK is available directly in this repository:
+For quick installation without building from source, a pre-compiled debug APK is available on the [Releases page](https://github.com/INTE5HAR/Kalculator/releases):
 
-- 📦 **[Download app-debug.apk](app-debug.apk)** *(~13.1 MB)*
+- 📦 **[Download app-debug.apk (v0.1.0-beta.1)](https://github.com/INTE5HAR/Kalculator/releases/download/v0.1.0-beta.1/app-debug.apk)** *(~13.1 MB)*
 
 > **Installation Note:** To install on an Android device:
-> 1. Download `app-debug.apk` directly to your phone.
+> 1. Open the download link above on your phone.
 > 2. Open the file and allow **"Install from unknown sources"** if prompted by Android.
 > 3. Follow the on-screen prompts to complete installation.
 
